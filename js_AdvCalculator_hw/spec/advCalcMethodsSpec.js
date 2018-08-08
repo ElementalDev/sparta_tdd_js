@@ -91,6 +91,22 @@ describe("This is testing my advanced calculator", function()
     expect(calculator.SquareRoot(64)).toEqual(8);
     expect(calculator.SquareRoot(1024)).toEqual(32);
   })
-
   
+  //BMI
+  it("should take a weight(lbs) and height(in) and work out the correct BMI", function() {
+    expect(calculator.BMIWorkingImp(100, 10)).toEqual(703);
+  })
+
+  it("should take a weight(kg) and height(m) and work out the correct BMI", function() {
+    expect(calculator.BMIWorkingMet(100, 10)).toEqual(1);
+  })
+
+  //Trip
+  it("should take a distance, an MPG, a cost per gallon and a speed, and work out the correct cost", function() {
+    expect(calculator.TripCost(60, 60, 1, 60)).toEqual(1);
+  })
+
+  it("should take a distance and a speed, and work out the correct time", function() {
+    expect(calculator.TripTime(60, 60)).toEqual(1);
+  })
 })
