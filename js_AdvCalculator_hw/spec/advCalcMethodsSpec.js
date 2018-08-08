@@ -39,7 +39,6 @@ describe("This is testing my advanced calculator", function()
     expect(calculator.Subtract(1, 0.4)).toEqual(0.6);
     expect(calculator.Subtract(6.25, 3.25)).toEqual(3);
   })
-
   // Multiply
   it("should multiply 2 numbers", function() {
     expect(calculator.Multiply(3, 2)).toEqual(6);
