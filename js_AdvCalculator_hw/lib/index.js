@@ -105,7 +105,14 @@ function BMICalc() {
 
   alert("Please note that BMI is a guideline and doesn't take muscle mass into account when working out category");
 
-  result = BMIWorking(weight, height, measurementType); //Calls function tha calculates BMI
+  switch (measurementType) {
+    case "imp":
+      result = BMIWorkingImp(weight, height); //Calls function tha calculates BMI in Imperial
+      break;
+    case "met":
+      result = BMIWorkingMet(weight, height); //Calls function tha calculates BMI in Metric
+      break;
+  }
 
   alert("Your BMI is: " + result);
 
@@ -131,9 +138,10 @@ function TripCalc() {
   var efficiency = parseFloat(prompt("How efficient is your vehicle? (mpg)"));
   var costpg = parseFloat(prompt("What is your cost per gallon? (pence)"));
   var milesph = parseFloat(prompt("What will your average speed be? (mph)"));
+  var time = TripTime(distance, milesph);
+  var cost = TripCost(distance, efficiency, costpg, milesph);
 
-  TripWorking(distance, efficiency, costpg, milesph); //Calls function that performs trip calculation
-
+  alert("Your trip will take " + time + " hours and cost £" + cost);
 }
 
 function useAgain() {

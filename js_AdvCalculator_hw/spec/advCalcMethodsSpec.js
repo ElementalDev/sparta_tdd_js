@@ -77,4 +77,13 @@ describe("This is testing my advanced calculator", function()
     expect(calculator.Divide(10.5, 2.5)).toEqual(4.2);
     expect(calculator.Divide(6.50, 3.25)).toEqual(2);
   })
+
+  //Power of
+  it("should take a base and an exponent and times by that exponent", function() {
+    expect(calculator.PowerOf(6, 2)).toEqual(36);
+    expect(calculator.PowerOf(4, 4)).toEqual(256);
+    expect(calculator.PowerOf(10, 3)).toEqual(1000);
+  })
+
+  
 })

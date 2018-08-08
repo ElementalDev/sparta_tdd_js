@@ -28,27 +28,24 @@ function SquareRoot(number1) {
   return Math.sqrt(number1);
 }
 
-//This function is the BMI helper function.
-function BMIWorking(weight, height, measurementType) {
+//This function is the BMI helper function for imperial.
+function BMIWorkingImp(weight, height) {
+  return 703 * (weight / (Math.pow(height, 2)))
+}
 
-  if (measurementType == "met") {
-    return weight / (Math.pow(height, 2));
-  }
-  else if (measurementType == "imp") {
-    return 703 * (weight / (Math.pow(height, 2)))
-  }
+//This function is the BMI helper function for imperial.
+function BMIWorkingMet(weight, height) {
+  return weight / (Math.pow(height, 2));
 }
 
 //This function is the Trip helper function.
-function TripWorking(distance, efficiency, cost_per_gallon, speed) {
+function TripCost(distance, efficiency, cost_per_gallon, speed) {
 
-  var time = 0.0;
-  var cost = 0.0;
   var mpgDiff = 0.0;
 
   if(speed <= 60){
-    time = Math.round(distance / speed); //Formula for time in hours
-    cost = (((distance / 100) / efficiency) * cost_per_gallon); //Formula for cost
+     //Formula for time in hours
+    return ((distance / efficiency) * cost_per_gallon); //Formula for cost
   }
   else if (speed > 60) { //Every 1 mph over 60, take away 2 mpg
     mpgDiff = speed - 60; //Find the difference between the speed and 60
@@ -58,12 +55,13 @@ function TripWorking(distance, efficiency, cost_per_gallon, speed) {
         alert("This is impossible, please try again!");//If MPG is below 0, its impossible
       }
     }
-    time = Math.round((distance / speed) * 100) / 100; // Formula for time in hours
-    cost = (((distance / 100) / efficiency) * cost_per_gallon); // Formula for cost
+    return ((distance / efficiency) * cost_per_gallon); // Formula for cost
   }
-    alert("Your trip will take " + time + " hours and cost £" + cost);
 }
 
+function TripTime(distance, speed) {
+  return distance / speed;
+}
 
 module.exports = {
 
@@ -73,7 +71,9 @@ module.exports = {
   Divide: Divide,
   PowerOf: PowerOf,
   SquareRoot: SquareRoot,
-  BMIWorking: BMIWorking,
-  TripWorking: TripWorking
+  BMIWorkingImp: BMIWorkingImp,
+  BMIWorkingMet: BMIWorkingMet,
+  TripTime: TripTime,
+  TripCost: TripCost
 
 };
