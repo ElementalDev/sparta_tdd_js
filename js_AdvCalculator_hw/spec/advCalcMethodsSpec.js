@@ -85,5 +85,12 @@ describe("This is testing my advanced calculator", function()
     expect(calculator.PowerOf(10, 3)).toEqual(1000);
   })
 
+  //Square Root
+  it("should divide 2 numbers", function() {
+    expect(calculator.SquareRoot(16)).toEqual(4);
+    expect(calculator.SquareRoot(64)).toEqual(8);
+    expect(calculator.SquareRoot(1024)).toEqual(32);
+  })
+
   
 })
