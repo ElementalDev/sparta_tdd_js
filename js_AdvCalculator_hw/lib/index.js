@@ -64,19 +64,20 @@ function basicCalc() {
     result = division(num1, num2);
   }
   else {
-    alert("This is not an operation, please refresh and try again.");
+    alert("This is not an operation, please try again.");
   }
   alert(result);
 }
 
 //This function is the advanced calculator
 function advCalc() {
-  var operation = prompt("What operation would you like to perform? (pow or sqrt)").toLowerCase();
+  var operation = prompt("What operation would you like to perform? (pow or sqrt)");
   var num1 = 0;
   var num2 = 0;
   var result = 0;
 
   operation = operation[0];
+  operation = operation.toLowerCase();
 
   if (operation == "p")
   {
@@ -103,13 +104,16 @@ function bmiCalc() {
   var result = 0;
   var category = ["Underweight", "Normal", "Overweight", "Obese"]; //Array of BMI categories
 
+  measurementType = measurementType[0];
+  measurementType = measurementType.toLowerCase();
+
   alert("Please note that BMI is a guideline and doesn't take muscle mass into account when working out category");
 
   switch (measurementType) {
-    case "imp":
+    case "i":
       result = bmiImp(weight, height); //Calls function tha calculates BMI in Imperial
       break;
-    case "met":
+    case "m":
       result = bmiMet(weight, height); //Calls function tha calculates BMI in Metric
       break;
   }
@@ -144,9 +148,11 @@ function tripCalc() {
   alert("Your trip will take " + time + " hours and cost £" + cost);
 }
 
+//This function asks the user if they would like to use the calculator again
 function useAgain() {
   var choice = prompt("Would you like to use BAIT Calculator again? (y/n)");
 
+  choice = choice[0];
   choice = choice.toLowerCase();
 
   if (choice == "y"){
