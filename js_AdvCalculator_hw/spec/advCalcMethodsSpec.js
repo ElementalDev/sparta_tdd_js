@@ -1,112 +1,120 @@
+//This is the spec for the Advanced Calculator function
+
 describe("This is testing my advanced calculator", function()
  {
   var calculator = require("../lib/calcHelperFunctions.js");
 
-// Addition
+  //Addition
   it("should add 2 numbers", function() {
-    expect(calculator.Addition(3, 2)).toEqual(5);
-    expect(calculator.Addition(6, 3)).toEqual(9);
-    expect(calculator.Addition(1, 3)).toEqual(4);
+    expect(calculator.addition(3, 2)).toEqual(5);
+    expect(calculator.addition(6, 3)).toEqual(9);
+    expect(calculator.addition(1, 3)).toEqual(4);
   })
 
   it("should add negative numbers", function() {
-    expect(calculator.Addition(-1, 2)).toEqual(1);
-    expect(calculator.Addition(-2, -9)).toEqual(-11);
-    expect(calculator.Addition(-1, 3)).toEqual(2);
+    expect(calculator.addition(-1, 2)).toEqual(1);
+    expect(calculator.addition(-2, -9)).toEqual(-11);
+    expect(calculator.addition(-1, 3)).toEqual(2);
   })
 
   it("should add decimal numbers", function() {
-    expect(calculator.Addition(0.5, 2)).toEqual(2.5);
-    expect(calculator.Addition(0.6, 0.4)).toEqual(1);
-    expect(calculator.Addition(1.44, 2.4)).toEqual(3.84);
+    expect(calculator.addition(0.5, 2)).toEqual(2.5);
+    expect(calculator.addition(0.6, 0.4)).toEqual(1);
+    expect(calculator.addition(1.44, 2.4)).toEqual(3.84);
   })
 
-  // Subtraction
+  //Subtraction
   it("should subtract 2 numbers", function() {
-    expect(calculator.Subtract(3, 2)).toEqual(1);
-    expect(calculator.Subtract(6, 3)).toEqual(3);
-    expect(calculator.Subtract(1, 3)).toEqual(-2);
+    expect(calculator.subtraction(3, 2)).toEqual(1);
+    expect(calculator.subtraction(6, 3)).toEqual(3);
+    expect(calculator.subtraction(1, 3)).toEqual(-2);
   })
 
   it("should subtract negative numbers", function() {
-    expect(calculator.Subtract(-1, 2)).toEqual(-3);
-    expect(calculator.Subtract(-2, -9)).toEqual(7);
-    expect(calculator.Subtract(-1, 3)).toEqual(-4);
+    expect(calculator.subtraction(-1, 2)).toEqual(-3);
+    expect(calculator.subtraction(-2, -9)).toEqual(7);
+    expect(calculator.subtraction(-1, 3)).toEqual(-4);
   })
 
   it("should subtract decimal numbers", function() {
-    expect(calculator.Subtract(1.5, 0.5)).toEqual(1);
-    expect(calculator.Subtract(1, 0.4)).toEqual(0.6);
-    expect(calculator.Subtract(6.25, 3.25)).toEqual(3);
+    expect(calculator.subtraction(1.5, 0.5)).toEqual(1);
+    expect(calculator.subtraction(1, 0.4)).toEqual(0.6);
+    expect(calculator.subtraction(6.25, 3.25)).toEqual(3);
   })
 
-  // Multiply
-  it("should multiply 2 numbers", function() {
-    expect(calculator.Multiply(3, 2)).toEqual(6);
-    expect(calculator.Multiply(6, 3)).toEqual(18);
-    expect(calculator.Multiply(1, 0)).toEqual(0);
+  //Multiplication
+  it("should mutiply 2 numbers", function() {
+    expect(calculator.multiplication(3, 2)).toEqual(6);
+    expect(calculator.multiplication(6, 3)).toEqual(18);
+    expect(calculator.multiplication(1, 0)).toEqual(0);
   })
 
-  it("should multiply negative numbers", function() {
-    expect(calculator.Multiply(-1, 2)).toEqual(-2);
-    expect(calculator.Multiply(-2, -9)).toEqual(18);
-    expect(calculator.Multiply(-1, 3)).toEqual(-3);
+  it("should mutiply negative numbers", function() {
+    expect(calculator.multiplication(-1, 2)).toEqual(-2);
+    expect(calculator.multiplication(-2, -9)).toEqual(18);
+    expect(calculator.multiplication(-1, 3)).toEqual(-3);
   })
 
-  it("should multiply decimal numbers", function() {
-    expect(calculator.Multiply(1.5, 0.5)).toEqual(0.75);
-    expect(calculator.Multiply(1, 0.4)).toEqual(0.4);
-    expect(calculator.Multiply(6.25, 3.25)).toEqual(20.3125);
+  it("should mutiply decimal numbers", function() {
+    expect(calculator.multiplication(1.5, 0.5)).toEqual(0.75);
+    expect(calculator.multiplication(1, 0.4)).toEqual(0.4);
+    expect(calculator.multiplication(6.25, 3.25)).toEqual(20.3125);
   })
 
-  //Divide
+  //division
   it("should divide 2 numbers", function() {
-    expect(calculator.Divide(6, 2)).toEqual(3);
-    expect(calculator.Divide(15, 3)).toEqual(5);
-    expect(calculator.Divide(200, 100)).toEqual(2);
+    expect(calculator.division(6, 2)).toEqual(3);
+    expect(calculator.division(15, 3)).toEqual(5);
+    expect(calculator.division(200, 100)).toEqual(2);
   })
 
   it("should divide negative numbers", function() {
-    expect(calculator.Divide(-1, 2)).toEqual(-0.5);
-    expect(calculator.Divide(-10, -2)).toEqual(5);
-    expect(calculator.Divide(3, -1)).toEqual(-3);
+    expect(calculator.division(-1, 2)).toEqual(-0.5);
+    expect(calculator.division(-10, -2)).toEqual(5);
+    expect(calculator.division(3, -1)).toEqual(-3);
   })
 
   it("should divide decimal numbers", function() {
-    expect(calculator.Divide(1.5, 0.5)).toEqual(3);
-    expect(calculator.Divide(10.5, 2.5)).toEqual(4.2);
-    expect(calculator.Divide(6.50, 3.25)).toEqual(2);
+    expect(calculator.division(1.5, 0.5)).toEqual(3);
+    expect(calculator.division(10.5, 2.5)).toEqual(4.2);
+    expect(calculator.division(6.50, 3.25)).toEqual(2);
   })
 
   //Power of
   it("should take a base and an exponent and times by that exponent", function() {
-    expect(calculator.PowerOf(6, 2)).toEqual(36);
-    expect(calculator.PowerOf(4, 4)).toEqual(256);
-    expect(calculator.PowerOf(10, 3)).toEqual(1000);
+    expect(calculator.powerOf(6, 2)).toEqual(36);
+    expect(calculator.powerOf(4, 4)).toEqual(256);
+    expect(calculator.powerOf(10, 3)).toEqual(1000);
   })
 
   //Square Root
   it("should divide 2 numbers", function() {
-    expect(calculator.SquareRoot(16)).toEqual(4);
-    expect(calculator.SquareRoot(64)).toEqual(8);
-    expect(calculator.SquareRoot(1024)).toEqual(32);
-  })
-  
-  //BMI
-  it("should take a weight(lbs) and height(in) and work out the correct BMI", function() {
-    expect(calculator.BMIWorkingImp(100, 10)).toEqual(703);
+    expect(calculator.squareRoot(16)).toEqual(4);
+    expect(calculator.squareRoot(64)).toEqual(8);
+    expect(calculator.squareRoot(1024)).toEqual(32);
   })
 
+  //BMI
+
+  //Imperial
+  it("should take a weight(lbs) and height(in) and work out the correct BMI", function() {
+    expect(calculator.bmiImp(100, 10)).toEqual(703);
+  })
+
+  //Metric
   it("should take a weight(kg) and height(m) and work out the correct BMI", function() {
-    expect(calculator.BMIWorkingMet(100, 10)).toEqual(1);
+    expect(calculator.bmiMet(100, 10)).toEqual(1);
   })
 
   //Trip
+
+  //Cost
   it("should take a distance, an MPG, a cost per gallon and a speed, and work out the correct cost", function() {
-    expect(calculator.TripCost(60, 60, 1, 60)).toEqual(1);
+    expect(calculator.tripCost(60, 60, 1, 60)).toEqual(1);
   })
 
+  //Time
   it("should take a distance and a speed, and work out the correct time", function() {
-    expect(calculator.TripTime(60, 60)).toEqual(1);
+    expect(calculator.tripTime(60, 60)).toEqual(1);
   })
 })

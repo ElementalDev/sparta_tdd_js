@@ -1,12 +1,12 @@
 //This loops through the program until the user says they don't want to use it again. Equivalent to Main method
 do {
     alert("Please choose the type of calculator you would like to use.");
-    CalcMenu(); //This calls the menu function
+    calcMenu(); //This calls the menu function
     var userChoice = useAgain(); //This asks the user if they would like to use the calculator again.
 } while(userChoice == true)
 
 //This is the menu of the calculator. The parameter determines whether the user wants to play or not?
-function CalcMenu() {
+function calcMenu() {
   var option = prompt("(B)Basic | (A)Advanced | (I)BMI | (T)Trip")
 
   option = option[0]; //Takes the first letter of whatever the user inputs
@@ -15,23 +15,23 @@ function CalcMenu() {
   //Takes the users input and directs the code to the relevant function
   switch (option) {
     case "b":
-      BasicCalc()
+      basicCalc()
       break;
     case "a":
-      AdvCalc();
+      advCalc();
       break;
     case "i":
-      BMICalc();
+      bmiCalc();
       break;
     case "t":
-      TripCalc();
+      tripCalc();
       break;
     default: alert("This is not an option. Please try again.");
   }
 }
 
 //This function is the basic calculator
-function BasicCalc() {
+function basicCalc() {
 
   var operation = prompt("What operation would you like to perform? (+-*/)"); //Asks the user which operation they want to use
   var num1 = 0;
@@ -43,25 +43,25 @@ function BasicCalc() {
   {
     num1 = parseFloat(prompt("First Number: "));
     num2 = parseFloat(prompt("Second Number: "));
-    result = Addition(num1, num2);
+    result = addition(num1, num2);
   }
   else if (operation == "-")
   {
     num1 = parseFloat(prompt("First Number: "));
     num2 = parseFloat(prompt("Second Number: "));
-    result = Subtract(num1, num2);
+    result = subtraction(num1, num2);
   }
   else if (operation == "*")
   {
     num1 = parseFloat(prompt("First Number: "));
     num2 = parseFloat(prompt("Second Number: "));
-    result = Multiply(num1, num2);
+    result = multiplication(num1, num2);
   }
   else if (operation == "/")
   {
     num1 = parseFloat(prompt("First Number: "));
     num2 = parseFloat(prompt("Second Number: "));
-    result = Divide(num1, num2);
+    result = division(num1, num2);
   }
   else {
     alert("This is not an operation, please refresh and try again.");
@@ -70,7 +70,7 @@ function BasicCalc() {
 }
 
 //This function is the advanced calculator
-function AdvCalc() {
+function advCalc() {
   var operation = prompt("What operation would you like to perform? (pow or sqrt)").toLowerCase();
   var num1 = 0;
   var num2 = 0;
@@ -96,7 +96,7 @@ function AdvCalc() {
 }
 
 //This function is the BMI calculator
-function BMICalc() {
+function bmiCalc() {
   var measurementType = prompt("Metric or Imperial? (imp/met)"); //Imperial = inches and lbs | Metric = meters and kgs
   var weight = parseFloat(prompt("What is your weight (imp: lbs | met: kg)?"));
   var height = parseFloat(prompt("What is your height? (imp: ins | met: m)"));
@@ -107,10 +107,10 @@ function BMICalc() {
 
   switch (measurementType) {
     case "imp":
-      result = BMIWorkingImp(weight, height); //Calls function tha calculates BMI in Imperial
+      result = bmiImp(weight, height); //Calls function tha calculates BMI in Imperial
       break;
     case "met":
-      result = BMIWorkingMet(weight, height); //Calls function tha calculates BMI in Metric
+      result = bmiMet(weight, height); //Calls function tha calculates BMI in Metric
       break;
   }
 
@@ -132,14 +132,14 @@ function BMICalc() {
 }
 
 //This function is the trip calculator
-function TripCalc() {
+function tripCalc() {
   //Asks for all required input to be able to perform the calculation
   var distance = parseFloat(prompt("How far have you got to go? (km)"));
   var efficiency = parseFloat(prompt("How efficient is your vehicle? (mpg)"));
   var costpg = parseFloat(prompt("What is your cost per gallon? (pence)"));
   var milesph = parseFloat(prompt("What will your average speed be? (mph)"));
-  var time = TripTime(distance, milesph);
-  var cost = TripCost(distance, efficiency, costpg, milesph);
+  var time = tripTime(distance, milesph);
+  var cost = tripCost(distance, efficiency, costpg, milesph);
 
   alert("Your trip will take " + time + " hours and cost £" + cost);
 }

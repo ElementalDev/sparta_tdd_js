@@ -1,45 +1,50 @@
 //This function performs addition
-function Addition(number1, number2) {
+function addition(number1, number2) {
   return number1 + number2
 }
 
-//This function performs subtraction
-function Subtract(number1, number2) {
+//This function performs subtractionion
+function subtraction(number1, number2) {
   return number1 - number2
 }
 
 //This function performs multiplication
-function Multiply(number1, number2) {
+function multiplication(number1, number2) {
   return number1 * number2
 }
 
 //This function performs division
-function Divide(number1, number2) {
+function division(number1, number2) {
   return number1 / number2
 }
 
 //This function uses "Power of" operations
-function PowerOf(number1, powerOf) {
-  return Math.pow(number1, powerOf);
+function powerOf(number1, exponent) {
+  return Math.pow(number1, exponent);
 }
 
 //This function performs square root operations
-function SquareRoot(number1) {
+function squareRoot(number1) {
   return Math.sqrt(number1);
 }
 
 //This function is the BMI helper function for imperial.
-function BMIWorkingImp(weight, height) {
+function bmiImp(weight, height) {
   return 703 * (weight / (Math.pow(height, 2)))
 }
 
 //This function is the BMI helper function for imperial.
-function BMIWorkingMet(weight, height) {
+function bmiMet(weight, height) {
   return weight / (Math.pow(height, 2));
 }
 
-//This function is the Trip helper function.
-function TripCost(distance, efficiency, cost_per_gallon, speed) {
+//This function is the Trip helper function for time.
+function tripTime(distance, speed) {
+  return distance / speed;
+}
+
+//This function is the Trip helper function for cost.
+function tripCost(distance, efficiency, cost_per_gallon, speed) {
 
   var mpgDiff = 0.0;
 
@@ -59,21 +64,18 @@ function TripCost(distance, efficiency, cost_per_gallon, speed) {
   }
 }
 
-function TripTime(distance, speed) {
-  return distance / speed;
-}
 
 module.exports = {
 
-  Addition: Addition,
-  Subtract: Subtract,
-  Multiply: Multiply,
-  Divide: Divide,
-  PowerOf: PowerOf,
-  SquareRoot: SquareRoot,
-  BMIWorkingImp: BMIWorkingImp,
-  BMIWorkingMet: BMIWorkingMet,
-  TripTime: TripTime,
-  TripCost: TripCost
+  addition: addition,
+  subtraction: subtraction,
+  multiplication: multiplication,
+  division: division,
+  powerOf: powerOf,
+  squareRoot: squareRoot,
+  bmiImp: bmiImp,
+  bmiMet: bmiMet,
+  tripTime: tripTime,
+  tripCost: tripCost
 
 };
